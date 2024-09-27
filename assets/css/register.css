@@ -1,0 +1,327 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Estilos do modo claro e escuro */
+body {
+    background-color: #eef2f3;
+    color: #333;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #eef2f3;
+}
+
+/* Estilos para a barra de rolagem personalizada */
+.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #e0e0e0;  /* Cor do fundo da barra de rolagem */
+    border-radius: 10px;        /* Bordas arredondadas da barra */
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #2cb355 !important;   /* Cor da barra de rolagem */
+    border-radius: 10px;        /* Bordas arredondadas da barra */
+    width: 4px !important;      /* Espessura da barra de rolagem */
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: #50bb73 !important;   /* Tom mais escuro ao passar o mouse */
+}
+
+.register-box {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .register-box {
+    background-color: #444;
+    color: #eef2f3;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+#toggleTheme {
+    background-color: white;
+    color: #2cb355;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#toggleTheme:hover {
+    background-color: #ebebeb;
+    transform: scale(1.05);
+}
+
+
+body.dark-theme #toggleTheme{
+    background-color: #4ac372;;
+}
+
+body.dark-theme #toggleTheme:hover {
+    background-color: #2e7e49;
+}
+
+body.dark-theme #toggleTheme {
+    color: #ffffff;
+}
+
+/* Contêiner principal */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* padding: 20px; */
+    background: #333; /* Fundo neutro, sem verde */
+    transition: background 0.3s ease;
+}
+
+body .register-container {
+    background-color: #eef2f3;
+}
+
+body.dark-theme .register-container {
+    background-color: #333;
+}
+
+/* Caixa de registro */
+.register-box {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho do formulário */
+h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #2cb355; /* Verde nos componentes */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+body.dark-theme h2 {
+    color: #2cb355;
+}
+
+
+.register-box .msg-success,
+.register-box .msg-error{
+    width: 100%;
+    
+    padding: 10px ;
+    margin-bottom: 15px;
+
+    background-color: #ff4d4d;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.register-box .msg-success{
+    background-color: #50bb73;
+}
+.register-box .msg-error p,
+.register-box .msg-success p{
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+
+    margin: 0;
+}
+
+/* Estilo dos grupos de input */
+.input-group {
+    margin-bottom: 25px;
+    position: relative;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    display: block;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.register-box .error-nome input[name='nome'],
+.register-box .error-login input[name='login'],
+.register-box .error-password input.password{
+    border-color: #ff4d4d;
+}
+
+.input-group input.password{
+    padding: 15px 45px 15px 20px;
+}
+
+.input-group input:focus {
+    border-color: #2cb355;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(44, 179, 85, 0.2);
+}
+
+/* Adicionando ícone de olho para visualizar senha */
+.input-group .toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(15%);
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #bbb;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.input-group .toggle-password:hover {
+    color: #2cb355;
+}
+
+body.dark-theme .input-group input {
+    background-color: #555;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-theme .input-group input:focus {
+    border-color: #2cb355;
+    background-color: #444;
+}
+
+body.dark-theme .toggle-password {
+    color: #777;
+}
+
+body.dark-theme .toggle-password:hover {
+    color: #2cb355;
+}
+
+/* Botão de registro */
+.register-btn {
+    background-color: #2cb355;
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.register-btn:hover {
+    background-color: #28a347;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Link para login */
+.login-link {
+    margin-top: 15px;
+    font-size: 0.85em;
+}
+
+.login-link a {
+    color: #2cb355;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: #28a347;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .register-box {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .input-group input {
+        padding: 12px 15px;
+    }
+
+    .register-btn {
+        padding: 12px;
+    }
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação sutil ao focar */
+.input-group input:focus {
+    animation: focusAnim 0.3s ease-in-out;
+}
+
+@keyframes focusAnim {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: 0 0 8px rgba(44, 179, 85, 0.2);
+    }
+}
